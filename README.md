@@ -1,59 +1,41 @@
 # Může čmelák létat? 🐝
 
-Jednoduchá webová kalkulačka pro výpočet, zda může čmelák létat na základě fyzikálních parametrů.
+Jednoduchá webová kalkulačka vyvracející slavný mýtus, že čmelák podle zákonů aerodynamiky létat nemůže. Pomocí fyzikálních výpočtů vztlaku a váhy si můžete ověřit, jestli zadané parametry umožňují čmelákovi vzlétnout.
 
-## Obsah projektu
+## 🌐 Demo
 
-- `index.html` - kompletní web (HTML + CSS + JavaScript)
-- `bumblebee.jpg` - obrázek čmeláka
-- `README.md` - tento soubor
+[Spustit kalkulačku](https://tvoje-url.github.io/cmelak-calculator/) <!-- TODO: Doplň finální URL -->
 
-## Jak nahodit na GitHub Pages (zdarma hosting)
+## 📦 Použití
 
-### 1. Vytvoř GitHub repozitář
+### Stažení a spuštění lokálně
 
-1. Jdi na [github.com](https://github.com) a přihlaš se
-2. Klikni na "New repository"
-3. Pojmenuj ho např. `cmelak-calculator`
-4. Nastav ho jako **Public**
-5. Klikni "Create repository"
+1. **Klonuj repozitář:**
+   ```bash
+   git clone https://github.com/tvoje-jmeno/cmelak-calculator.git
+   cd cmelak-calculator
+   ```
 
-### 2. Nahraj soubory
+2. **Otevři `index.html` v prohlížeči**
+   - Dvojklik na soubor, nebo
+   - Spusť lokální server: `python -m http.server 8000`
 
-Máš dvě možnosti:
+### Fork a vlastní hosting
 
-**A) Přes webové rozhraní (jednodušší):**
-1. V repozitáři klikni "uploading an existing file"
-2. Přetáhni oba soubory (`index.html` a `bumblebee.jpg`)
-3. Klikni "Commit changes"
+1. **Fork** tohoto repozitáře
+2. **GitHub Pages**: Settings → Pages → zapni pro main branch
+3. **Vlastní doména** (volitelné): Nastav CNAME v DNS a přidej custom domain v GitHub Pages
 
-**B) Přes Git (pokud máš nainstalovaný):**
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/TVOJE_JMENO/cmelak-calculator.git
-git push -u origin main
+
+## 📁 Struktura projektu
+
+```
+├── index.html      # Kompletní webová aplikace
+├── bumblebee.jpg   # Obrázek čmeláka
+└── README.md       # Tento soubor
 ```
 
-### 3. Zapni GitHub Pages
-
-1. V repozitáři jdi do **Settings**
-2. V levém menu klikni na **Pages**
-3. V sekci "Source" vyber **main** branch
-4. Klikni **Save**
-5. Za chvíli (1-2 min) ti GitHub ukáže URL: `https://tvoje-jmeno.github.io/cmelak-calculator/`
-
-### 4. Vlastní doména (volitelné)
-
-1. Kup doménu (např. na Wedos.cz nebo Cloudflare)
-2. V DNS nastavení domény přidej:
-   - **A záznam** → IP: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - **CNAME záznam** → `www` → `tvoje-jmeno.github.io`
-3. V GitHub Settings → Pages → Custom domain zadej svou doménu
-4. Zaškrtni "Enforce HTTPS"
-
-## Jak to funguje
+## 🔧 Jak to funguje
 
 Kalkulačka počítá podle vzorců:
 
@@ -81,6 +63,14 @@ Pokud Vztlak > Váha → čmelák může létat! ✅
 - Responsive design
 - Žádná analytika, žádné cookies
 
-## Licence
+## 📄 Licence
 
-Free to use. Have fun! 🐝
+MIT License - volně použitelné pro jakékoli účely.
+
+## 👨‍💻 Autor
+
+Vytvořil [FOXEM AUTOMATIONS](https://foxem.cz)
+
+---
+
+Máš nápad na vylepšení? Pull requesty jsou vítány! 🐝
