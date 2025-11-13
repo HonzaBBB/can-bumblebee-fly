@@ -14,72 +14,70 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            padding: 20px;
+            overflow: hidden;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1400px;
+            width: 100%;
+            height: 100%;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .header {
             background: linear-gradient(135deg, #FDB913 0%, #F7931E 100%);
-            padding: 40px 30px;
+            padding: 20px 30px;
             text-align: center;
         }
 
         .header h1 {
             color: #1a1a1a;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            margin-bottom: 5px;
             font-weight: 700;
         }
 
         .header p {
             color: #333;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
-        .content {
-            padding: 40px 30px;
+        .main-content {
+            flex: 1;
+            display: flex;
+            gap: 30px;
+            padding: 30px;
+            overflow: auto;
         }
 
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #555;
-            line-height: 1.8;
+        .image-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .intro p {
-            margin-bottom: 15px;
-        }
-
-        .image-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .image-container img {
+        .image-section img {
             max-width: 100%;
+            max-height: 500px;
+            width: auto;
             height: auto;
-            border-radius: 15px;
+            object-fit: contain;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .image-credits {
             font-size: 0.85rem;
             color: #888;
-            margin-top: 10px;
+            margin-top: 15px;
+            text-align: center;
         }
 
         .image-credits a {
@@ -87,36 +85,44 @@
             text-decoration: none;
         }
 
+        .calculator-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         .calculator {
             background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
+            padding: 25px;
+            border-radius: 10px;
         }
 
         .calculator h2 {
             color: #333;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: center;
+            font-size: 1.3rem;
         }
 
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .input-group label {
             display: block;
             color: #555;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .input-group input {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 5px;
+            font-size: 0.95rem;
             transition: border-color 0.3s;
         }
 
@@ -127,16 +133,16 @@
 
         .button {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
+            border-radius: 5px;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .button:hover {
@@ -148,11 +154,11 @@
         }
 
         .results {
-            margin-top: 30px;
-            padding: 25px;
+            margin-top: 20px;
+            padding: 20px;
             background: white;
-            border-radius: 10px;
-            border: 3px solid #ddd;
+            border-radius: 5px;
+            border: 2px solid #ddd;
         }
 
         .results.hidden {
@@ -162,8 +168,9 @@
         .result-row {
             display: flex;
             justify-content: space-between;
-            padding: 12px 0;
+            padding: 8px 0;
             border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
         }
 
         .result-row:last-child {
@@ -181,32 +188,33 @@
         }
 
         .verdict {
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 10px;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 5px;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 700;
         }
 
         .verdict.can-fly {
             background: #d4edda;
             color: #155724;
-            border: 3px solid #28a745;
+            border: 2px solid #28a745;
         }
 
         .verdict.cannot-fly {
             background: #f8d7da;
             color: #721c24;
-            border: 3px solid #dc3545;
+            border: 2px solid #dc3545;
         }
 
         .footer {
             text-align: center;
-            padding: 30px;
+            padding: 15px;
             background: #f8f9fa;
             color: #666;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
         }
 
         .footer a {
@@ -219,17 +227,42 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
+        /* Mobile layout */
+        @media (max-width: 968px) {
+            body {
+                height: auto;
+                overflow: auto;
+            }
+
+            .container {
+                height: auto;
+            }
+
             .header h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
 
             .header p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
-            .content {
-                padding: 30px 20px;
+            .main-content {
+                flex-direction: column;
+                padding: 20px;
+                overflow: visible;
+            }
+
+            .calculator-section {
+                order: 1;
+            }
+
+            .image-section {
+                order: 2;
+                margin-top: 20px;
+            }
+
+            .image-section img {
+                max-height: 300px;
             }
 
             .calculator {
@@ -242,64 +275,59 @@
     <div class="container">
         <div class="header">
             <h1>🐝 Může čmelák létat?</h1>
-            <p>Aerodynamická kalkulačka podle zákonů fyziky</p>
+            <p>Vyvraťme mýtus pomocí fyziky!</p>
         </div>
 
-        <div class="content">
-            <div class="intro">
-                <p>Podle slavného mýtu by čmelák podle zákonů aerodynamiky létat <strong>nemohl</strong>. 
-                   Mýtus vznikl z nepochopení, jak funguje vztlak u hmyzu – čmeláci generují vztlak dynamickými 
-                   pohyby křídel, ne statickou aerodynamikou.</p>
-                <p>Pojďme si to spočítat! Zadej parametry a zjisti, jestli může tvůj čmelák opravdu vzlétnout.</p>
-            </div>
-
-            <div class="image-container">
-                <img src="bumblebee.jpg" alt="Čmelák na květině">
+        <div class="main-content">
+            <div class="image-section">
+                <img src="bumblebee.webp" alt="Čmelák na květině">
                 <div class="image-credits">
                     Foto: <a href="https://www.pexels.com/cs-cz/foto/leto-zahrada-zavod-rostlina-2662156/" target="_blank">Michelle Reeves</a>
                 </div>
             </div>
 
-            <div class="calculator">
-                <h2>Kalkulačka vztlaku</h2>
-                
-                <div class="input-group">
-                    <label for="velocity">Rychlost (m/s)</label>
-                    <input type="number" id="velocity" value="5" step="0.1" min="0">
-                </div>
-
-                <div class="input-group">
-                    <label for="density">Hustota vzduchu (kg/m³)</label>
-                    <input type="number" id="density" value="1.6" step="0.1" min="0">
-                </div>
-
-                <div class="input-group">
-                    <label for="liftCoef">Koeficient vztlaku</label>
-                    <input type="number" id="liftCoef" value="1.6" step="0.1" min="0">
-                </div>
-
-                <div class="input-group">
-                    <label for="wingArea">Plocha křídel (m²)</label>
-                    <input type="number" id="wingArea" value="0.002" step="0.0001" min="0">
-                </div>
-
-                <div class="input-group">
-                    <label for="mass">Hmotnost (kg)</label>
-                    <input type="number" id="mass" value="0.001" step="0.0001" min="0">
-                </div>
-
-                <button class="button" onclick="calculate()">Spočítej!</button>
-
-                <div id="results" class="results hidden">
-                    <div class="result-row">
-                        <span class="result-label">Vztlak:</span>
-                        <span class="result-value" id="lift">-</span>
+            <div class="calculator-section">
+                <div class="calculator">
+                    <h2>Kalkulačka vztlaku</h2>
+                    
+                    <div class="input-group">
+                        <label for="velocity">Rychlost (m/s)</label>
+                        <input type="number" id="velocity" value="5" step="0.1" min="0">
                     </div>
-                    <div class="result-row">
-                        <span class="result-label">Váha:</span>
-                        <span class="result-value" id="weight">-</span>
+
+                    <div class="input-group">
+                        <label for="density">Hustota vzduchu (kg/m³)</label>
+                        <input type="number" id="density" value="1.6" step="0.1" min="0">
                     </div>
-                    <div id="verdict" class="verdict"></div>
+
+                    <div class="input-group">
+                        <label for="liftCoef">Koeficient vztlaku</label>
+                        <input type="number" id="liftCoef" value="1.6" step="0.1" min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="wingArea">Plocha křídel (m²)</label>
+                        <input type="number" id="wingArea" value="0.002" step="0.0001" min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="mass">Hmotnost (kg)</label>
+                        <input type="number" id="mass" value="0.001" step="0.0001" min="0">
+                    </div>
+
+                    <button class="button" onclick="calculate()">Spočítej!</button>
+
+                    <div id="results" class="results hidden">
+                        <div class="result-row">
+                            <span class="result-label">Vztlak:</span>
+                            <span class="result-value" id="lift">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Váha:</span>
+                            <span class="result-value" id="weight">-</span>
+                        </div>
+                        <div id="verdict" class="verdict"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -311,30 +339,23 @@
 
     <script>
         function calculate() {
-            // Získání hodnot z inputů
             const velocity = parseFloat(document.getElementById('velocity').value);
             const density = parseFloat(document.getElementById('density').value);
             const liftCoef = parseFloat(document.getElementById('liftCoef').value);
             const wingArea = parseFloat(document.getElementById('wingArea').value);
             const mass = parseFloat(document.getElementById('mass').value);
 
-            // Validace
             if (isNaN(velocity) || isNaN(density) || isNaN(liftCoef) || isNaN(wingArea) || isNaN(mass)) {
                 alert('Prosím vyplň všechny hodnoty správně.');
                 return;
             }
 
-            // Výpočet vztlaku: L = 0.5 × ρ × v² × CL × A
             const lift = 0.5 * density * Math.pow(velocity, 2) * liftCoef * wingArea;
-            
-            // Výpočet váhy: W = m × g (g = 9.81 m/s²)
             const weight = mass * 9.81;
 
-            // Zobrazení výsledků
             document.getElementById('lift').textContent = lift.toFixed(5) + ' N';
             document.getElementById('weight').textContent = weight.toFixed(5) + ' N';
 
-            // Verdikt
             const verdictElement = document.getElementById('verdict');
             if (lift > weight) {
                 verdictElement.textContent = '✅ Může létat!';
@@ -344,11 +365,9 @@
                 verdictElement.className = 'verdict cannot-fly';
             }
 
-            // Zobrazení výsledkové sekce
             document.getElementById('results').classList.remove('hidden');
         }
 
-        // Auto-calculate při změně hodnot
         document.querySelectorAll('input').forEach(input => {
             input.addEventListener('input', () => {
                 if (document.getElementById('results').classList.contains('hidden') === false) {
